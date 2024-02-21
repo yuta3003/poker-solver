@@ -10,4 +10,4 @@ services:
     - "/app/node_modules" # 匿名ボリューム
     ports:
     - 3000:3000
-    stdin_open: true
+    # stdin_open: true
