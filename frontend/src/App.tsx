@@ -1,16 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Button from './components/Button';
-
+import Home from './pages/Home';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Button variant="primary" onClick={() => {}}>
-          Create Range
-        </Button>
+        <Home />
       </header>
     </div>
   );
