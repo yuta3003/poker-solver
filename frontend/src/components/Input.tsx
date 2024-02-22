@@ -29,8 +29,11 @@ const InputStyle = styled.div<{ error: string | undefined }>`
     font-family: "Open Sans", "sans-serif";
     font-size: inherit;
     color: rgba(0, 0, 0, 0.85);
-    border-color: ${(props: { error: boolean }) =>
-      props.error ? colors.warning : "rgba(0,0,0,0.15)"};
+    border-color: ${(props) =>
+      props.error !== undefined && props.error !== ""
+        ? colors.warning
+        : "rgba(0,0,0,0.15)"};
+
     &::placeholder {
       color: rgba(0, 0, 0, 0.65);
       font-weight: normal;
