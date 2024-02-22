@@ -1,6 +1,6 @@
-import React, { ChangeEvent } from 'react';
-import styled from 'styled-components';
-import { colors, makeOpaque } from '../styles';
+import React, { type ChangeEvent } from 'react'
+import styled from 'styled-components'
+import { colors, makeOpaque } from '../styles'
 
 const InputStyle = styled.div<{ error: string | undefined }>`
   text-align: left;
@@ -29,7 +29,7 @@ const InputStyle = styled.div<{ error: string | undefined }>`
     font-family: 'Open Sans', 'sans-serif';
     font-size: inherit;
     color: rgba(0, 0, 0, 0.85);
-    border-color: ${props => props.error ? colors.warning : 'rgba(0,0,0,0.15)'};
+    border-color: ${(props: { error: boolean }) => props.error ? colors.warning : 'rgba(0,0,0,0.15)'};
     &::placeholder {
       color: rgba(0, 0, 0, 0.65);
       font-weight: normal;
@@ -38,28 +38,27 @@ const InputStyle = styled.div<{ error: string | undefined }>`
       border-color: ${makeOpaque(colors.primary, 0.5)};
     }
   }
-`;
+`
 
-
-type InputProps = {
+interface InputProps {
   placeholder?: string
-  value: string,
-  label: string,
-  name: string,
-  className?: string,
+  value: string
+  label: string
+  name: string
+  className?: string
   error?: string | undefined
   // TODO include all valid types
-  type?: 'email' | 'text' | 'password',
+  type?: 'email' | 'text' | 'password'
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
-};
+}
 
-export default function Input(props: InputProps): React.ReactElement {
-  const { error, name, label, onChange, value, className = '', placeholder = '', type = 'text'} = props;
+export default function Input (props: InputProps): React.ReactElement {
+  const { error, name, label, onChange, value, className = '', placeholder = '', type = 'text' } = props
   return (
     <InputStyle error={error} className={className}>
       <label className='input-label' htmlFor={name}>{label}</label>
       <input name={name} onChange={onChange} value={value} placeholder={placeholder} type={type}/>
       <label className='input-error' htmlFor={name}>{error}</label>
     </InputStyle>
-  );
+  )
 }
