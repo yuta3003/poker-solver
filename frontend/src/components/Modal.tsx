@@ -1,14 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-import Button from './Button'
+import Button from "./Button";
 
 interface ModalProps {
-  shown: boolean
-  closeModal: () => void
-  title: string
-  children: React.ReactElement
-  actionButtons?: [React.ReactElement]
+  shown: boolean;
+  closeModal: () => void;
+  title: string;
+  children: React.ReactElement;
+  actionButtons?: [React.ReactElement];
 }
 
 const ModalStyle = styled.div`
@@ -34,7 +34,8 @@ const ModalStyle = styled.div`
     background: #fff;
     border-radius: 2px;
     min-width: 500px;
-    .modal-top, .modal-bottom {
+    .modal-top,
+    .modal-bottom {
       height: 60px;
       padding: 0 1em;
     }
@@ -74,34 +75,29 @@ const ModalStyle = styled.div`
       height: 100%;
       border-radius: 0;
     }
-
   }
-`
+`;
 
-function Modal (props: ModalProps): React.ReactElement {
-  const { actionButtons = [], shown, closeModal, children, title } = props
+function Modal(props: ModalProps): React.ReactElement {
+  const { actionButtons = [], shown, closeModal, children, title } = props;
   if (!shown) {
-    return <></>
+    return <></>;
   }
   return (
     <ModalStyle>
-      <div onClick={closeModal} className="modal-bg"/>
+      <div onClick={closeModal} className="modal-bg" />
       <div className="modal">
         <div className="modal-top">
-          <div className="modal-title">
-            {title}
-          </div>
+          <div className="modal-title">{title}</div>
         </div>
-        <div className="modal-content">
-          {children}
-        </div>
+        <div className="modal-content">{children}</div>
         <div className="modal-bottom">
           <Button onClick={closeModal}>Close</Button>
           {actionButtons}
         </div>
       </div>
     </ModalStyle>
-  )
+  );
 }
 
-export default Modal
+export default Modal;

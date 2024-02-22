@@ -1,6 +1,6 @@
-import React from 'react'
-import './App.css'
-import Home from './pages/Home'
+import React from "react";
+import "./App.css";
+import Home from "./pages/Home";
 
 // function App () {
 const App: React.FunctionComponent = () => {
@@ -10,7 +10,7 @@ const App: React.FunctionComponent = () => {
         <Home />
       </header>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

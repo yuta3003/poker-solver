@@ -1,32 +1,32 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const colors = {
-  primary: '#2e3e8c',
-  warning: '#e08869',
-  info: '#B5D99C',
-  background: '#E4E9F1'
-}
+  primary: "#2e3e8c",
+  warning: "#e08869",
+  info: "#B5D99C",
+  background: "#E4E9F1",
+};
 
 export const shadow = [
-  '0px 4px 12px rgba(0,0,0,0.1)',
-  '0px 5px 12px rgba(0, 0, 0, 0.2)'
-]
+  "0px 4px 12px rgba(0,0,0,0.1)",
+  "0px 5px 12px rgba(0, 0, 0, 0.2)",
+];
 
-export function makeOpaque (col: string, opacity: number): string {
-  if (col[0] === '#') {
-    col = col.slice(1)
+export function makeOpaque(col: string, opacity: number): string {
+  if (col[0] === "#") {
+    col = col.slice(1);
   }
-  const num = parseInt(col, 16)
-  let r = num >> 16
-  if (r > 255) r = 255
-  else if (r < 0) r = 0
-  let b = (num >> 8) & 0x00ff
-  if (b > 255) b = 255
-  else if (b < 0) b = 0
-  let g = num & 0x0000ff
-  if (g > 255) g = 255
-  else if (g < 0) g = 0
-  return `rgba(${r}, ${b}, ${g}, ${opacity})`
+  const num = parseInt(col, 16);
+  let r = num >> 16;
+  if (r > 255) r = 255;
+  else if (r < 0) r = 0;
+  let b = (num >> 8) & 0x00ff;
+  if (b > 255) b = 255;
+  else if (b < 0) b = 0;
+  let g = num & 0x0000ff;
+  if (g > 255) g = 255;
+  else if (g < 0) g = 0;
+  return `rgba(${r}, ${b}, ${g}, ${opacity})`;
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -81,4 +81,4 @@ export const GlobalStyle = createGlobalStyle`
   input, textarea, p {
     font-family: 'Open Sans', 'sans-serif';
   }
-`
+`;
