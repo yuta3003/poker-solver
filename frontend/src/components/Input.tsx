@@ -2,8 +2,7 @@ import React, { type ChangeEvent } from "react";
 import styled from "styled-components";
 import { colors, makeOpaque } from "../styles";
 
-const InputStyle = styled.div<{ error: string | undefined }>`
-  text-align: left;
+const InputStyle = styled.div<{ error: string | undefined }>` text-align: left;
   .input-label {
     display: block;
     width: 100%;
@@ -21,7 +20,6 @@ const InputStyle = styled.div<{ error: string | undefined }>`
     height: 0.8em;
   }
   > input {
-    width: 100%;
     padding: 1em;
     border-radius: 2px;
     border: 2px solid;

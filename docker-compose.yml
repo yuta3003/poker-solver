@@ -4,10 +4,18 @@ services:
     build:
       context: .
       dockerfile: ./Docker/frontend/Dockerfile
-    tty: true
     volumes:
     - ./frontend:/app
     - "/app/node_modules" # 匿名ボリューム
     ports:
     - 3000:3000
+    tty: true
     # stdin_open: true
+
+  backend:
+    build:
+      context: .
+      dockerfile: ./Docker/backend/Dockerfile
+    volumes:
+    - ./backend:/api
+    tty: true
