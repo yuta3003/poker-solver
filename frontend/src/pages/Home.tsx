@@ -15,7 +15,6 @@ function Home(): React.ReactElement {
       >
         Create Range
       </Button>
-
       <Modal
         title="Add Range"
         shown={modalShown}
