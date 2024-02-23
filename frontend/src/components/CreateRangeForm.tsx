@@ -1,9 +1,5 @@
 import React, { useState, type ChangeEvent } from "react";
-import styled from "styled-components";
-
 import Input from "./Input";
-
-const CreateRangeFormStyle = styled.div``;
 
 function CreateRangeForm(): React.ReactElement {
   const [game, setGame] = useState("");
@@ -25,7 +21,7 @@ function CreateRangeForm(): React.ReactElement {
     setGame(value);
   }
   return (
-    <CreateRangeFormStyle>
+    <div>
       <form>
         <Input value={game} name="game" label="Game" onChange={onGameChange} />
         <Input
@@ -36,7 +32,7 @@ function CreateRangeForm(): React.ReactElement {
         />
         <Input value={name} name="name" label="Name" onChange={onNameChange} />
       </form>
-    </CreateRangeFormStyle>
+    </div>
   );
 }
 
